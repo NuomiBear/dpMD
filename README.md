@@ -7,32 +7,29 @@
 - 怎么创建执行上下文
 - 在ES6规范前的执行上下文相关内容
 - 作用域
-- 闭包
-- This
 
 02 基础
 
+- 闭包
+- This
+- call、apply、bind
 - Object对象
 - 原型/类/继承
 
 03 基础
 
+- Promies
 - 事件委托
+- 深浅拷贝
 
-02 数据类型&检测
+04 基础
 
-03 this
+- Service Worker/PWA
+- Web Woeker
+- 常用方法API
 
-09 Promise
+05 专题：数据类型&检测
 
-10 strange
+06 专题：HTTP
 
-12 HTTP
-
-- 1.0 键入网址到网页显示，期间发生了什么
-
-  - URL解析
-  - DNS域名解析
-  - 网络模型
-  - 协议栈
-  - HTT报文
+07 专题：一些奇怪的现象
