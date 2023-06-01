@@ -1,27 +1,33 @@
-// let todoPrototype = {
-//   toString: function () {
-//     return this.id + "" + this.userName + ":" + this.title
+// function Person() { }
+// let p
+// Object.defineProperty(Person.prototype, 'namePersonPro', { value: 'PersonPrototype' })
+// Object.defineProperty(Person.prototype, 'getThisPersonPro', {
+//   get() {
+//     console.log('this', this)
+//     console.log('this is p', this === p)
+//     console.log('this is Person.prototype', this === Person.prototype)
+//     console.log('this is Object.prototype', this === Object.prototype)
 //   }
-// }
+// })
 
-// function Todo(arg) {
-//   let newTodo = Object.create(todoPrototype)
-//   Object.assign(newTodo, arg)
-//   return newTodo
-// }
+// Object.defineProperty(Object.prototype, 'nameObjPro', {
+//   value: 'ObjectPrototype'
+// })
+// Object.defineProperty(Object.prototype, 'getThisObjPro', {
+//   get() {
+//     console.log('this', this)
+//     console.log('this is p', this === p)
+//     console.log('this is Person.prototype', this === Person.prototype)
+//     console.log('this is Object.prototype', this === Object.prototype)
+//   }
+// })
 
-let Todo = (function createTodoFactory() {
-  let todoPrototype = {
-    toString: function () {
-      return this.id + "" + this.userName + ":" + this.title
-    }
-  }
+// p = new Person()
 
-  return function (todo) {
-    let newTodo = Object.create(todo)
-    Object.assign(newTodo, todo)
-    return newTodo
-  }
-})()
+// console.log(p.__proto__)
 
-let todo = Todo({ 'id': 1, "title": 'title', 'userName': 'J' })
+// console.log(p)
+
+function abc() {
+
+}
