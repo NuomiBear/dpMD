@@ -1,20 +1,10 @@
-var num = 10
-var obj = { num: 15 }
+let obj = { name: 'Nuomi' }
+function fn(num1, num2) {
+    this.total = num1 + num2
+}
+fn(10, 20)  //this:window
+obj.fn(10, 20)  //Uncaught TypeError: obj.fn is not a function
 
-obj.fn = (function (num) {
-    this.num += 10
-    num *= 2
-    console.log(num)
-    return function (n) {
-        this.num += n
-        console.log(n + (--num))
-    }
-})(obj.num)
-
-
-console.log(window.num, obj.num)
-
-var fn = obj.fn
-fn(10)
-obj.fn(15)
-console.log(window.num, obj.num)
+fn.call(obj, 10, 20)    //this:obj
+fn.call(10, 20) //this:10 num1:20 num2:undefined
+fn.call()   //this:window num1=num2=undefined <=> fn()

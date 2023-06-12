@@ -1,5 +1,9 @@
 # dpMD
 
+00
+
+- COMMAND
+
 01
 
 - 执行栈ECS
@@ -41,33 +45,38 @@
 - 原型链
   - _proto__的getter
 
-- call、apply、bind
-- Object对象
-- 原型/类/继承
-
 03
 
 - This
   - 简单：This的常见情况
+    - 题目1：this
+    - 题目2：this
+  - call、apply、bind
   - 深入
 
 04
 
+- Object对象
+  - Object.create()
+  - Object.assign()
+  - Object.defineProperties()
+  - Object.defineProperty()
+  - Object.entries()
+  - Object.getPrototypeOf()
+  - Object.keys()
+
+05
+
+06
+
+07
+
+- HTTP
 - Promies
 - 事件委托
 - 深浅拷贝
 - Service Worker/PWA
 - Web Woeker
 - 常用方法API
-
-05
-
 - 数据类型&检测
-
-06
-
-- HTTP
-
-07
-
 - 一些奇怪的现象
