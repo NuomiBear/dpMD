@@ -1,8 +1,20 @@
-let obj = { name: 'Nuomi' }
+let obj = { name: "Nuomi" }
 function fn(num1, num2) {
     this.total = num1 + num2
 }
-//改变fn中的this，并且立即执行
-fn.call(obj, 10, 20)
-//虽然改变了fn中的this，但是并没有把fn执行，属于预先处理this和实参，不会立即执行，只有达到某个条件的时候才会被出发执行
-fn.bind(obj, 10, 20)    
+
+// 一秒后执行fn，执行fn的时候让fn中的this->obj，并且传递两个实参10，20
+
+// 1s后执行，this没有改变
+setTimeout(fn, 1000)
+
+// 设置定时器的时候就把fn执行了，1s后执行的是fn的返回结果
+setTimeout(fn.call(obj, 10, 20), 1000)
+
+setTimeout(function () {
+    // 1s后执行的匿名函数：fn放在匿名函数里执行
+    fn.call(obj, 10, 20)
+}, 1000)
+
+// bind预处理
+setTimeout(fn.bind(obj, 10, 20), 1000)
