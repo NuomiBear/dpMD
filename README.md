@@ -7,15 +7,15 @@
 
 01
 
-- 执行栈ECS
+- 执行栈ECS（函数调用栈）
 - 执行上下文EC
 - 怎么创建执行上下文
   - The Creation Phase
-    - Lexical Environment（词法环境）函数提升
-    - Variable Environment 变量提升
-  - Variable Environment 变量提升
+    - Lexical Environment（词法环境）`函数提升`
+    - Variable Environment `变量提升`
+  - The Execution Phase
   - 销毁阶段
-  - 代码
+  - 代码实例
 - 在ES6规范前的执行上下文相关内容
 - 作用域
 - 相关实例
@@ -53,7 +53,13 @@
     - 题目1：this
     - 题目2：this
   - call、apply、bind
-  - 深入
+  - 深入了解This
+    - Reference Record
+    - 那么如何确定this的值呢
+    - foo()
+    - foo.bar()
+    - f = foo.bar f()
+    - 核心
 
 04
 
