@@ -53,6 +53,9 @@
     - 题目1：this
     - 题目2：this
   - call、apply、bind
+    - call
+    - apply
+    - bind
   - 深入了解This
     - Reference Record
     - 那么如何确定this的值呢
@@ -87,3 +90,5 @@
 - 常用方法API
 - 数据类型&检测
 - 一些奇怪的现象
+
+0624：call、apply、bind、原型、Promise、题目5-10
