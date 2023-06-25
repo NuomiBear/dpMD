@@ -1,29 +1,64 @@
-Function.prototype.call1 = function (context) {
-    //将执行函数赋值给context的一个属性，由context.fn来调用执行改
+// Function.prototype.mycall = function (context) {
+//     var context = context || window
+//     context.fn = this
+
+//     var args = []
+//     for (var i = 1; i < arguments.length; i++) {
+//         args.push('arguments[' + i + ']')
+//     }
+
+//     var result = eval('context.fn(' + args + ')')
+
+//     delete context.fn
+//     return result
+// }
+
+// //测试
+// var foo = {
+//     value: 1
+// }
+
+// function bar(name, age) {
+//     return {
+//         name: name,
+//         age: age,
+//         value: this.value
+//     }
+
+// }
+// console.log(bar.mycall(foo, '江', '29'))
+
+Function.prototype.myapply = function (context, ary) {
+    var context = context || window
     context.fn = this
 
-    //获取参数
-    var args = []
-    for (var i = 1, len = arguments.length; i < len; i++) {
-        //此处得到args结果为 ['arguments[1]', 'arguments[2]']
-        args.push('arguments[' + i + ']')
+    var result
+
+    if (!ary) {
+        result = context.fn()
+    } else {
+        var args = []
+        for (var i = 0; i < ary.length; i++) {
+            args.push('ary[' + i + ']')
+        }
+        result = eval('context.fn(' + args + ')')
     }
 
-    //传递参数执行
-    eval('context.fn(' + args +')')
-
-    //删除函数
     delete context.fn
+    return result
 }
 
+//测试
 var foo = {
     value: 1
 }
 
 function bar(name, age) {
-    console.log(this.value)
-    console.log(name)
-    console.log(age)
-}
+    return {
+        name: name,
+        age: age,
+        value: this.value
+    }
 
-bar.call1(foo, '江', '29')
+}
+console.log(bar.myapply(foo, ['江', '29']))
