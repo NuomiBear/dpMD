@@ -54,6 +54,9 @@
     - 题目2：this
   - call、apply、bind
     - call
+      - call规范
+      - call模拟实现
+      - call实现继承
     - apply
     - bind
   - 深入了解This
