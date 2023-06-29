@@ -75,8 +75,15 @@
 04
 
 - 几个重要知识点
-- 浏览器中的一个问题
+- prototype：ECMAScript 2022
+  - 那么一个对象如何为另一个对象提供属性访问呢？
+- constructor
+- \__proto__
+  - 浏览器中的一个问题  
   - __proto__的getter
+- prototype chain
+- 原型重定向
+- 函数的三种角色
 
 05
 
