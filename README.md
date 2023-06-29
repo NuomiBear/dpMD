@@ -58,7 +58,14 @@
       - call模拟实现
       - call实现继承
     - apply
-    - bind
+      - apply规范
+      - apply模拟实现：简单
+      - apply模拟实现：优化
+    - bind(ES5)
+      - bind具体做了什么
+      - bind模拟实现：apply（简单）
+      - bind模拟实现：MDN的Polyfill（兼容）（apply）
+      - bind模拟实现：原生（非call和apply）（未整理）
   - 深入了解This
     - Reference Record
     - 那么如何确定this的值呢
