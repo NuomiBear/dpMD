@@ -43,8 +43,6 @@
       - 追问1：如果期望代码的输出变成：5 -> 0,1,2,3,4，该怎么改造代码？
       - 追问2：如果期望代码的输出变成 0 -> 1 -> 2 -> 3 -> 4 -> 5，并且要求原有的代码块中的循环和两处 console.log 不变，该怎么改造代码？
       - 追问3：ES7 async/await
-- 原型链
-  - _proto__的getter
 
 03
 
@@ -76,6 +74,12 @@
 
 04
 
+- 几个重要知识点
+- 浏览器中的一个问题
+  - __proto__的getter
+
+05
+
 - Object对象
   - Object.create()
   - Object.assign()
@@ -84,8 +88,6 @@
   - Object.entries()
   - Object.getPrototypeOf()
   - Object.keys()
-
-05
 
 06
 
@@ -101,4 +103,4 @@
 - 数据类型&检测
 - 一些奇怪的现象
 
-0624：call、apply、bind、原型、Promise、题目5-10
+0624：原型、Promise、题目5-10

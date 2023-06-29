@@ -1,38 +1,25 @@
-Function.prototype.myapply = function (context) {
-    var context = context || window
-    var fn = Symbol()
-    context[fn] = this
-    var ary = arguments[1]
-    var result
-
-    if (!ary) {
-        result = context[fn]()
-    } else {
-        // eval
-        var fnStr = 'context[fn]('
-        for (var i = 0; i < ary.length; i++) {
-            fnStr += i == ary.length - 1 ? ary[i] : ary[i] + ','
-        }
-        fnStr += ')'
-
-        result = eval(fnStr)
-    }
-
-    delete context[fn]
-    return result
+var fn = function () {
+    console.log('fn')
 }
 
-//测试
-var foo = {
-    value: 1
-}
+fn.time = '01点44分'
+fn.date = '0630'
 
-function bar(name, age) {
-    return {
-        name: name,
-        age: age,
-        value: this.value
-    }
+var objfn = new fn()
 
-}
-console.log(bar.myapply(foo, ['江', '29']))
+
+console.log(fn)
+// ƒ () {
+//     console.log('ƒn')
+// }
+console.log(objfn)
+// ƒn {}
+console.dir(fn)
+// ƒ ƒn()
+//     date:"0630"
+//     time:"01点44分"
+//     arguments:null
+//     caller:null
+//     length:0
+//     name:"fn"
+//     prototype:{constructor:ƒ}
