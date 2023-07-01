@@ -1,25 +1,24 @@
-var fn = function () {
-    console.log('fn')
+function Parent() {
+    this.x = 100
 }
 
-fn.time = '01点44分'
-fn.date = '0630'
+Parent.prototype.getX = function () {
+    console.log(this.x)
+}
 
-var objfn = new fn()
+function Children() {
+    this.y = 200
+}
 
+// 子类原型执行父类的实例
+Children.prototype = new Parent()
+// 重新设置子类的原有的构造函数
+Children.prototype.constructor = Children
+// 子类新的原型上扩展方法
+Children.prototype.getY = function () {
+    console.log(this.y)
+}
 
-console.log(fn)
-// ƒ () {
-//     console.log('ƒn')
-// }
-console.log(objfn)
-// ƒn {}
-console.dir(fn)
-// ƒ ƒn()
-//     date:"0630"
-//     time:"01点44分"
-//     arguments:null
-//     caller:null
-//     length:0
-//     name:"fn"
-//     prototype:{constructor:ƒ}
+var child = new Children()
+
+console.log(child)
