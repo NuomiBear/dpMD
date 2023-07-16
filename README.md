@@ -108,18 +108,21 @@
   - ES6的类及继承
   - call（子类和父类没有实质关系）
 
-98
-
-- Object对象
-  - Object.create()
-  - Object.assign()
-  - Object.defineProperties()
-  - Object.defineProperty()
-  - Object.entries()
-  - Object.getPrototypeOf()
-  - Object.keys()
-
-06
+06 1.0 键入网址到网页显示，期间发生了什么？
+  
+- URL解析
+- HTTP请求阶段：向服务器发送请求
+  - DNS域名解析
+  - 网络模型
+    - 应用层
+    - 传输层
+    - 网络层：为数据包选择路由
+    - 网络接口层：数据链路层+物理层
+  - 协议栈
+    - TCP
+    - IP
+- HTTP响应阶段：服务器把客户端需要的内容准备好，并且返回给客户端
+- 浏览器渲染阶段
 
 07
 
@@ -133,6 +136,17 @@
 - 数据类型&检测
 - 一些奇怪的现象
 
+98
+
+- Object对象
+  - Object.create()
+  - Object.assign()
+  - Object.defineProperties()
+  - Object.defineProperty()
+  - Object.entries()
+  - Object.getPrototypeOf()
+  - Object.keys()
+
 99
 
 - typeof
@@ -143,12 +157,12 @@
 
 - 跨域
   - JSONP
-  - cors
-  - window.name
-  - document.domain
-  - postMessage
-  - webpack proxy（webScoket）
+  - CORS
+  - webpack proxy（常用）
   - nginx反向代理
-  - 基于IFRAME实现跨域
+  - 基于IFRAME实现跨域（4）
+  - 正向代理和反向代理
+    - 正向代理
+    - 反向代理
 
-0624：原型、继承、Promise、题目5-10
+0718：原型、继承、Promise、题目
