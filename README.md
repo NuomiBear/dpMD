@@ -81,16 +81,32 @@
   - 问题：Symbol 是构造函数么？
   - 普通函数执行VS构造函数执行
     - 普通函数执行
-    - 构造函数执行:new
+    - 构造函数执行：new
 - __proto__
   - 浏览器中的一个问题  
   - __proto__的getter
-- prototype chain
 - 原型重定向
+- prototype chain：原型链
+  - 我们如何去判断原型和实例的这种继承关系？
+    - instanceof
+    - isPrototypeOf()
+  - 原型链（继承）的问题
 - 函数的三种角色
+- Object和Function的鸡和蛋的问题
 
 05：JavaScript：继承
 
+- new 关键字
+  - new 做了哪些事
+- 继承（显式继承和隐式继承）
+  - 原型链继承
+  - 经典继承（借用构造函数）
+  - 组合继承（原型链继承和经典继承）
+  - Object.create（原型式继承）
+  - 寄生式继承
+  - 寄生组合式继承
+  - ES6的类及继承
+  - call（子类和父类没有实质关系）
 
 98
 
@@ -122,5 +138,17 @@
 - typeof
 - instanceof
   - 特殊判断
+
+100
+
+- 跨域
+  - JSONP
+  - cors
+  - window.name
+  - document.domain
+  - postMessage
+  - webpack proxy（webScoket）
+  - nginx反向代理
+  - 基于IFRAME实现跨域
 
 0624：原型、继承、Promise、题目5-10
