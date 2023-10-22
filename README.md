@@ -152,6 +152,7 @@
 - typeof
 - instanceof
   - 特殊判断
+- BigInt
 
 100
 
