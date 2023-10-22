@@ -66,9 +66,14 @@ instanceof 运算符用于检测构造函数的 prototype 属性是否出现在�
 
 ### 特殊判断
 
+需要先了解JavaScript原型和原型链相关知识
+
 ```javascript
     console.log(Object instanceof Object); //true 
     console.log(Function instanceof Function); //true 
+
+    console.log(Number instanceof Number);//false 
+    console.log(String instanceof String);//false 
 ```
 
 对于 Object 来说，主要是来判断 Object.prototype 是否存在于 Object 的原型链上：
