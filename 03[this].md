@@ -856,7 +856,7 @@ instanceof：用于检测构造函数的 prototype  属性是否出现在某个�
 
 ### 深入了解This
 
-在 `[01.md]怎么创建执行上下文` 中 我们简单提到过 `this` 
+在 `[01.md]怎么创建执行上下文` 中 我们简单提到过 `this`
 
 我们需要先了解一下 ECMAScript Specification Types 在 ECMAScript® 2022中:
 
