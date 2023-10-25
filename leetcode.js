@@ -24,29 +24,34 @@ var countSeniors = function (details) {
  */
 
 var numRollsToTarget = function (n, k, target) {
-    //n个骰子，每个骰子k个面，和为target
     const mod = 1e9 + 7;
-    //此处f 结果为数组 内部为 n+1个 数组  每个数组为 target+1 个 0
-    //如 [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
     f = new Array(n + 1).fill(0).map(() => new Array(target + 1).fill(0));
-    //结果如 [[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
     f[0][0] = 1;
+    console.log(f)
     for (let i = 1; i <= n; i++) {
-        //第i个骰子
         for (let j = 0; j <= target; j++) {
-            //第i个骰子：和为j
             for (let x = 1; x <= k; x++) {
-                //第i个骰子：和为j：第x面
                 if (j - x >= 0) {
+                    console.log(f[i - 1][j - x])
                     f[i][j] = (f[i][j] + f[i - 1][j - x]) % mod;
-                    console.log(i, j, x, f[i][j])
                 }
             }
         }
     }
-    console.log(f)
-    console.log(f[n][target])
     return f[n][target];
 };
 
-console.log(numRollsToTarget(3, 7, 7))
+
+// 2698. 求一个整数的惩罚数
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var punishmentNumber = function (n) {
+    var result = 0
+    for (i = 1; i <= n; i++) {
+        result = i * i
+    }
+
+};
