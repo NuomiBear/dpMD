@@ -4,7 +4,6 @@
  * @param {string[]} details
  * @return {number}
  */
-
 var countSeniors = function (details) {
     let count = 0
     details.forEach((item, index) => {
@@ -22,7 +21,6 @@ var countSeniors = function (details) {
  * @param {number} target
  * @return {number}
  */
-
 var numRollsToTarget = function (n, k, target) {
     const mod = 1e9 + 7;
     f = new Array(n + 1).fill(0).map(() => new Array(target + 1).fill(0));
@@ -54,4 +52,23 @@ var punishmentNumber = function (n) {
         result = i * i
     }
 
+};
+
+
+// 2520. 统计能整除数字的位数
+
+/**
+ * @param {number} num
+ * @return {number}
+ */
+var countDigits = function (num) {
+    let t = num
+    let res = 0
+    while (t) {
+        if (num % (t % 10) == 0) {
+            res += 1
+        }
+        t = Math.floor(t / 10)
+    }
+    return res
 };
