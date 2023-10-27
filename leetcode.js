@@ -46,12 +46,34 @@ var numRollsToTarget = function (n, k, target) {
  * @param {number} n
  * @return {number}
  */
-var punishmentNumber = function (n) {
-    var result = 0
-    for (i = 1; i <= n; i++) {
-        result = i * i
+var punishmentNumber = function(n) {
+    // s=> n^2
+    // s.length 字符串长度
+    // target == i
+    const dfs = (s, pos, tot, target) => {
+        if (pos == s.length) {
+            return tot == target;
+        }
+        let sum = 0;
+        for (let i = pos; i < s.length; i++) {
+            sum = sum * 10 + parseInt(s[i]);
+            if (tot + sum > target) {
+                break;
+            }
+            if (dfs(s, i + 1, tot + sum, target)) {
+                return true;
+            }
+        }
+        return false;
     }
-
+    let res = 0;
+    for (let i = 1; i <= n; i++) {
+        let s = (i * i).toString();
+        if (dfs(s, 0, 0, i)) {
+            res += i * i;
+        }
+    }
+    return res;
 };
 
 
@@ -71,4 +93,18 @@ var countDigits = function (num) {
         t = Math.floor(t / 10)
     }
     return res
+};
+
+
+// 1465. 切割后面积最大的蛋糕
+
+/**
+ * @param {number} h
+ * @param {number} w
+ * @param {number[]} horizontalCuts
+ * @param {number[]} verticalCuts
+ * @return {number}
+ */
+var maxArea = function(h, w, horizontalCuts, verticalCuts) {
+
 };
