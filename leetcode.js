@@ -46,7 +46,7 @@ var numRollsToTarget = function (n, k, target) {
  * @param {number} n
  * @return {number}
  */
-var punishmentNumber = function(n) {
+var punishmentNumber = function (n) {
     // s=> n^2
     // s.length 字符串长度
     // target == i
@@ -105,6 +105,33 @@ var countDigits = function (num) {
  * @param {number[]} verticalCuts
  * @return {number}
  */
-var maxArea = function(h, w, horizontalCuts, verticalCuts) {
+var maxArea = function (h, w, horizontalCuts, verticalCuts) {
 
 };
+
+
+// 2558. 从数量最多的堆取走礼物
+
+/**
+ * @param {number[]} gifts
+ * @param {number} k
+ * @return {number}
+ */
+var pickGifts = function (gifts, k) {
+    const pq = new MaxPriorityQueue();
+    gifts.map(v => {
+        pq.enqueue(v);
+    });
+    while (k > 0) {
+        let x = pq.dequeue().element;
+        pq.enqueue(Math.floor(Math.sqrt(x)));
+        k--;
+    }
+    let res = 0;
+    while (pq.size() > 0) {
+        res += pq.dequeue().element;
+    }
+    return res;
+};
+
+pickGifts([25,64,9,4,100],4)

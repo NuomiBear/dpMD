@@ -149,9 +149,6 @@
 
 99
 
-- typeof
-- instanceof
-  - 特殊判断
 - BigInt
 
 100
@@ -166,11 +163,14 @@
     - 正向代理
     - 反向代理
 
-leetcode
+101
 
-- 2678.老人的数目
+- typeof
+- instanceof
+  - 特殊判断
 
 1023-1027: 任务
 
 1. 继承
 2. 模式
+3. leetcode
