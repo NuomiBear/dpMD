@@ -118,20 +118,40 @@ var maxArea = function (h, w, horizontalCuts, verticalCuts) {
  * @return {number}
  */
 var pickGifts = function (gifts, k) {
-    const pq = new MaxPriorityQueue();
-    gifts.map(v => {
-        pq.enqueue(v);
-    });
+    let ary = gifts
+    ary.sort((a, b) => b - a)
+    console.log(ary)
     while (k > 0) {
-        let x = pq.dequeue().element;
-        pq.enqueue(Math.floor(Math.sqrt(x)));
-        k--;
+        let x = ary.shift()
+        ary.push(Math.floor(Math.sqrt(x)))
+        ary.sort((a, b) => b - a)
+        k--
     }
-    let res = 0;
-    while (pq.size() > 0) {
-        res += pq.dequeue().element;
+    let res = 0
+    console.log(ary)
+    while (ary.length > 0) {
+        res += ary.shift()
     }
-    return res;
+    return res
 };
 
-pickGifts([25,64,9,4,100],4)
+
+const dfs = (s, pos, tot, target) => {
+    if (pos == s.length) {
+        return tot == target;
+    }
+    let sum = 0;
+    for (let i = pos; i < s.length; i++) {
+        sum = sum * 10 + parseInt(s[i]);
+        console.log('sum:', sum, 'i:', i,'tot:',tot)
+        if (tot + sum > target) {
+            break;
+        }
+        if (dfs(s, i + 1, tot + sum, target)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+console.log(dfs('1296', 0, 0, 36))
