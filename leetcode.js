@@ -76,6 +76,26 @@ var punishmentNumber = function (n) {
     return res;
 };
 
+const dfs = (s, pos, tot, target) => {
+    if (pos == s.length) {
+        return tot == target;
+    }
+    let sum = 0;
+    for (let i = pos; i < s.length; i++) {
+        sum = sum * 10 + parseInt(s[i]);
+        console.log('sum:', sum, 'i:', i,'tot:',tot)
+        if (tot + sum > target) {
+            break;
+        }
+        if (dfs(s, i + 1, tot + sum, target)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+console.log(dfs('1296', 0, 0, 36))
+
 
 // 2520. 统计能整除数字的位数
 
@@ -134,24 +154,3 @@ var pickGifts = function (gifts, k) {
     }
     return res
 };
-
-
-const dfs = (s, pos, tot, target) => {
-    if (pos == s.length) {
-        return tot == target;
-    }
-    let sum = 0;
-    for (let i = pos; i < s.length; i++) {
-        sum = sum * 10 + parseInt(s[i]);
-        console.log('sum:', sum, 'i:', i,'tot:',tot)
-        if (tot + sum > target) {
-            break;
-        }
-        if (dfs(s, i + 1, tot + sum, target)) {
-            return true;
-        }
-    }
-    return false;
-}
-
-console.log(dfs('1296', 0, 0, 36))
