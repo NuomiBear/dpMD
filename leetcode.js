@@ -154,3 +154,58 @@ var pickGifts = function (gifts, k) {
     }
     return res
 };
+
+// 30.串联所有单词的子串
+
+/**
+ * @param {string} s
+ * @param {string[]} words
+ * @return {number[]}
+ */
+// 输入：s = "barfoothefoobarman", words = ["foo","bar"]
+// 输出：[0,9]
+// 解释：因为 words.length == 2 同时 words[i].length == 3，连接的子字符串的长度必须为 6。
+// 子串 "barfoo" 开始位置是 0。它是 words 中以 ["bar","foo"] 顺序排列的连接。
+// 子串 "foobar" 开始位置是 9。它是 words 中以 ["foo","bar"] 顺序排列的连接。
+// 输出顺序无关紧要。返回 [9,0] 也是可以的。
+var findSubstring = function(s, words) {
+    const res = [];
+    const m = words.length, n = words[0].length, ls = s.length;
+    for (let i = 0; i < n; i++) {
+        if (i + m * n > ls) {
+            break;
+        }
+        const differ = new Map();
+        for (let j = 0; j < m; j++) {
+            const word = s.substring(i + j * n, i + (j + 1) * n);
+            differ.set(word, (differ.get(word) || 0) + 1);
+        }
+        for (const word of words) {
+            differ.set(word, (differ.get(word) || 0) - 1);
+            if (differ.get(word) === 0) {
+                differ.delete(word);
+            }
+        }
+        for (let start = i; start < ls - m * n + 1; start += n) {
+            if (start !== i) {
+                let word = s.substring(start + (m - 1) * n, start + m * n);
+                differ.set(word, (differ.get(word) || 0) + 1);
+                if (differ.get(word) === 0) {
+                    differ.delete(word);
+                }
+                word = s.substring(start - n, start);
+                differ.set(word, (differ.get(word) || 0) - 1);
+                if (differ.get(word) === 0) {
+                    differ.delete(word);
+                }
+            }
+            if (differ.size === 0) {
+                res.push(start);
+            }
+        }
+    }
+    return res;
+};
+
+
+
