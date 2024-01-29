@@ -1,5 +1,11 @@
+<!-- https://note.youdao.com/ynoteshare/index.html?id=9ecec426ed69f21912ad286fc073fe54&type=note&_time=1704382792251 -->
+
 # JavaScript:：HTTP/S
 
 ## HTTP
 
-<!-- [有道云笔记](https://note.youdao.com/ynoteshare/index.html?id=9ecec426ed69f21912ad286fc073fe54&type=note&_time=1704382792251) -->
+HTTP协议定义Web客户端如何从Web服务器请求Web页面，以及服务器如何把Web页面传送给客户端。HTTP协议采用了请求/响应模型。客户端向服务器发送一个请求报文，请求报文包含请求的方法、URL、协议版本、请求头部和请求数据。服务器以一个状态行作为响应，响应的内容包括协议的版本、成功或者错误代码、服务器信息、响应头部和响应数据。
+
+HTTP是不保存状态的协议，既无状态协议，协议本身对于请求或响应之间的通信状态不进行保存，因此连接双方不能知晓对方当前的身份和状态。这也是Cookie技术产生的重要原因之一：客户端的状态管理。浏览器会根据从服务器端发送的响应报文内 Set-Cookie 首部字段信息自动保持 Cookie。而每次客户端发送 HTTP 请求，都会在请求报文中携带 Cookie，作为服务端识别客户端身份状态的标识。
+
+<!-- 协议参考06.md -->
