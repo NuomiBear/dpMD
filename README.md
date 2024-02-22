@@ -1,5 +1,7 @@
 # dpMD
 
+## 笔记
+
 00
 
 - JavaScript引擎
@@ -136,7 +138,7 @@
 - 数据类型&检测
 - 一些奇怪的现象
 
-98
+51
 
 - Object对象
   - Object.create()
@@ -147,11 +149,7 @@
   - Object.getPrototypeOf()
   - Object.keys()
 
-99
-
-- BigInt
-
-100
+53
 
 - 跨域
   - JSONP
@@ -163,14 +161,22 @@
     - 正向代理
     - 反向代理
 
-101
+54
 
 - typeof
 - instanceof
   - 特殊判断
 
-1023-1027: 任务
+## 面试
 
-1. 继承
-2. 模式
-3. leetcode
+90
+
+- CSS
+
+91
+
+- JS
+
+92
+
+- HTTP
