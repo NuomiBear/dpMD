@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+}
+
+body {
+    /* 100vw 100vh 出现滚动条，因为 body 有默认 8xp 的 margin */
+    width: 100vw;
+    min-height: 100vh;
+    background-color: lightblue;
+}
+
+.exampleBox {
+    /* exampleBox 未设置宽度，其元素宽度继承父元素的宽度 */
+}
+
+.span1 {
+    /* span1 未设置宽度，其元素宽度为内容的实际宽度 */
+}
